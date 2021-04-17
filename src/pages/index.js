@@ -27,15 +27,15 @@ const handBox = {
 const handGrip = [
   {
     grip: 'Palm',
-    imagePath: 'palm.png'
+    imagePath: 'palm.webp'
   },
   {
     grip: 'Claw',
-    imagePath: 'claw.png'
+    imagePath: 'claw.webp'
   },
   {
     grip: 'Fingertip',
-    imagePath: 'fingertip.png'
+    imagePath: 'fingertip.webp'
   },
 ]
 

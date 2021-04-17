@@ -28,17 +28,17 @@ const handSize = [
   {
     text: '<18CM',
     size: 'Kecil',
-    imagePath: 'smallhand.png'
+    imagePath: 'smallhand.webp'
   },
   {
     text: '18CM',
     size: 'Sedang',
-    imagePath: 'mediumhand.png'
+    imagePath: 'mediumhand.webp'
   },
   {
     text: '>18CM',
     size: 'Besar',
-    imagePath: 'bighand.png'
+    imagePath: 'bighand.webp'
   },
 ]
 
