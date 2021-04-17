@@ -1,6 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: "recommended-mouse-list",
+    siteUrl: "https://pppcmouselist.gatsbyjs.io/"
   },
   plugins: [
     "gatsby-plugin-gatsby-cloud",

@@ -24,36 +24,44 @@ const handBox = {
   justifyContent: 'center'
 }
 
-const handGrip = [
+const handSize = [
   {
-    grip: 'Palm',
-    imagePath: 'palm.png'
+    text: '<18CM',
+    size: 'Kecil',
+    imagePath: 'smallhand.png'
   },
   {
-    grip: 'Claw',
-    imagePath: 'claw.png'
+    text: '18CM',
+    size: 'Sedang',
+    imagePath: 'mediumhand.png'
   },
   {
-    grip: 'Fingertip',
-    imagePath: 'fingertip.png'
+    text: '>18CM',
+    size: 'Besar',
+    imagePath: 'bighand.png'
   },
 ]
 
 // markup
-const IndexPage = () => {
+const UkuranTangan = ({ location }) => {
+  if (location.state == null) {
+    return (
+      <main>hehe</main>
+    )
+  }
   return (
     <main style={pageStyles} className="container">
       <title>Home Page</title>
       <h1 style={headingStyles}>
-        Grip Tangan
+        Ukuran Tangan
       </h1>
       <div className="hand-container">
-        {handGrip.map(grip => (
+        {handSize.map(size => (
           <div style={handBox}>
-            <Link to='/ukuranTangan' state={{ gripTangan: grip.grip }}>
-              <img style={{ width: '300px' }} alt={grip.grip} src={`${grip.imagePath}`} />
+            <Link to='/mouseList' state={{ gripTangan: location.state.gripTangan, ukuranTangan: size.size }}>
+              <img style={{ width: '300px' }} alt={size.text} src={`${size.imagePath}`} />
             </Link>
-            <span style={{ marginTop: '16px', fontSize: '24px' }}>{grip.grip}</span>
+            <span style={{ marginTop: '16px', fontSize: '24px' }}>{size.text}</span>
           </div>
         ))}
       </div>
@@ -89,4 +97,4 @@ const IndexPage = () => {
   )
 }
 
-export default IndexPage
+export default UkuranTangan

@@ -3,7 +3,7 @@ import { Link } from "gatsby"
 
 // styles
 const pageStyles = {
-  color: "#232129",
+  color: "white",
   padding: "96px",
   fontFamily: "-apple-system, Roboto, sans-serif, serif",
 }
@@ -37,13 +37,6 @@ const NotFoundPage = () => {
         </span>{" "}
         we couldn’t find what you were looking for.
         <br />
-        {process.env.NODE_ENV === "development" ? (
-          <>
-            <br />
-            Try creating a page in <code style={codeStyles}>src/pages/</code>.
-            <br />
-          </>
-        ) : null}
         <br />
         <Link to="/">Go home</Link>.
       </p>
