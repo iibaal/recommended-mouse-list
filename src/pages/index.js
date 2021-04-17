@@ -6,7 +6,7 @@ import { Link } from "gatsby"
 // styles
 const pageStyles = {
   color: "#ffffff",
-  padding: 96,
+  // padding: 96,
   fontFamily: "-apple-system, Roboto, sans-serif, serif",
 }
 const headingStyles = {
@@ -47,11 +47,11 @@ const IndexPage = () => {
       <h1 style={headingStyles}>
         Grip Tangan
       </h1>
-      <div className="hand-container">
+      <div className="hand-container" style={{ flexWrap: 'wrap', justifyContent: 'center', textAlign: 'center' }}>
         {handGrip.map(grip => (
           <div style={handBox}>
             <Link to='/ukuranTangan' state={{ gripTangan: grip.grip }}>
-              <img style={{ width: '300px' }} alt={grip.grip} src={`${grip.imagePath}`} />
+              <img style={{ marginTop: '24px', width: '300px' }} alt={grip.grip} src={`${grip.imagePath}`} />
             </Link>
             <span style={{ marginTop: '16px', fontSize: '24px' }}>{grip.grip}</span>
           </div>

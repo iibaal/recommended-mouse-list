@@ -55,11 +55,11 @@ const UkuranTangan = ({ location }) => {
       <h1 style={headingStyles}>
         Ukuran Tangan
       </h1>
-      <div className="hand-container">
+      <div className="hand-container" style={{ flexWrap: 'wrap', justifyContent: 'center', textAlign: 'center' }}>
         {handSize.map(size => (
           <div style={handBox}>
             <Link to='/mouseList' state={{ gripTangan: location.state.gripTangan, ukuranTangan: size.size }}>
-              <img style={{ width: '300px' }} alt={size.text} src={`${size.imagePath}`} />
+              <img style={{ marginTop: '24px', width: '300px' }} alt={size.text} src={`${size.imagePath}`} />
             </Link>
             <span style={{ marginTop: '16px', fontSize: '24px' }}>{size.text}</span>
           </div>
