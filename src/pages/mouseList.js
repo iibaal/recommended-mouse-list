@@ -2,6 +2,7 @@ import * as React from "react"
 import "../styles/global.css"
 import { Link } from "gatsby"
 import { mouseList } from "../data"
+import { OutboundLink } from 'gatsby-plugin-gtag'
 
 
 // styles
@@ -65,12 +66,12 @@ const MouseList = ({ location }) => {
           mouseList.filter(mouse => mouse.size === location.state.ukuranTangan)
             .filter(mouse => mouse.grip === location.state.gripTangan)
             .map(mouse =>
-              <a key={mouse.key} style={mouseListStyle} className="mouseListStyle" target="_blank" href={`https://www.tokopedia.com/search?st=product&q=${mouse.mouseName}&navsource=home`}>
+              <OutboundLink key={mouse.key} style={mouseListStyle} className="mouseListStyle " target="_blank" rel="noreferrer" href={`https://www.tokopedia.com/search?st=product&q=${mouse.mouseName}&navsource=home`}>
                 <div style={{ color: 'white', textDecorationColor: 'grey', textDecoration: 'none', }} >
                   <span style={{ fontWeight: 600 }}>{mouse.mouseName}</span><br /><br />
                   <span style={{ color: '#dedede' }}>{mouse.shape}</span>
                 </div>
-              </a>)
+              </OutboundLink>)
         }
       </div>
       <div style={{ textAlign: 'center', marginTop: '64px', }}>
@@ -83,7 +84,7 @@ const MouseList = ({ location }) => {
 
       <div style={{ display: 'flex', justifyContent: 'center', textAlign: 'center' }}>
         <h3>
-          Join Discord kami dengan menekan tombol Connect dibawah!<br /><iframe style={{ marginTop: '32px' }} src={"https://discord.com/widget?id=668089659494105121&theme=dark$username=dogepism"} width="350" height="350" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+          Ada yang ingin ditanyakan? Join Discord kami dengan menekan tombol Connect dibawah!<br /><iframe title="discord-links" style={{ marginTop: '32px' }} src={"https://discord.com/widget?id=668089659494105121&theme=dark$username=dogepism"} width="350" height="350" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
         </h3>
       </div>
     </main>

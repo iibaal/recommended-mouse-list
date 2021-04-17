@@ -63,7 +63,6 @@ const handSize = [
 const IndexPage = () => {
   // Declare a new state variable, which we'll call "count"
   const [gripTangan, setGripTangan] = useState();
-  const [ukuranTangan, setUkuranTangan] = useState();
 
   return (
     <main style={pageStyles} className="container">
@@ -89,7 +88,7 @@ const IndexPage = () => {
         ))}
         {gripTangan && handSize.map(size => (
           <div style={handBox} className="grip-tangan">
-            <Link to='/mouseList' state={{ gripTangan: gripTangan, gripTangan, ukuranTangan: size.size }}>
+            <Link to='/mouseList' state={{ gripTangan: gripTangan, ukuranTangan: size.size }}>
               <img style={{ marginTop: '24px', width: '300px' }} alt={size.text} src={`${size.imagePath}`} />
             </Link>
             <span style={{ marginTop: '16px', marginBottom: '16px', fontSize: '24px' }}>{size.text}</span>
@@ -100,7 +99,7 @@ const IndexPage = () => {
 
       <div style={{ display: 'flex', justifyContent: 'center', textAlign: 'center' }}>
         <h3>
-          Join Discord kami dengan menekan tombol Connect dibawah!<br /><iframe style={{ marginTop: '32px' }} src={"https://discord.com/widget?id=668089659494105121&theme=dark$username=dogepism"} width="350" height="350" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+          Ada yang ingin ditanyakan? Join Discord kami dengan menekan tombol Connect dibawah!<br /><iframe title="discord-links" style={{ marginTop: '32px' }} src={"https://discord.com/widget?id=668089659494105121&theme=dark$username=dogepism"} width="350" height="350" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
         </h3>
       </div>
 
