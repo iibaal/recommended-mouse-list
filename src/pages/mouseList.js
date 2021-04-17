@@ -68,7 +68,7 @@ const MouseList = ({ location }) => {
             .filter(mouse => mouse.grip === location.state.gripTangan)
             .map(mouse =>
               <div key={mouse.key} style={mouseListStyle}>
-                <a style={{ color: 'white' }} target="_blank" href={`https://www.tokopedia.com/search?st=product&q=${mouse.mouseName}&navsource=home`}>
+                <a style={{ color: 'white', textDecorationColor: 'grey' }} target="_blank" href={`https://www.tokopedia.com/search?st=product&q=${mouse.mouseName}&navsource=home`}>
                   {mouse.mouseName}
                 </a>
               </div>)
