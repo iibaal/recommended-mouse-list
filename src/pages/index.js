@@ -1,7 +1,7 @@
 import * as React from "react"
 import "../styles/global.css"
 import { Link } from "gatsby"
-import { GatsbySeo } from 'gatsby-plugin-next-seo';
+import {Helmet} from "react-helmet";
 
 
 // styles
@@ -50,7 +50,6 @@ const IndexPage = () => {
         <meta name="description" content="Daftar mouse yang direkomendasikan oleh komunitas" />
         <link rel="canonical" href="https://pppcmouselist.gatsbyjs.io/" />
       </Helmet>
-      <GatsbySeo noindex={false} />
       
       <h1 style={headingStyles}>
         Grip Tangan
