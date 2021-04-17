@@ -1,15 +1,23 @@
-html {
-    background-color: #121212;
-    color: white;
-  }
-
-.hand-container {
-    display: flex; /* or inline-flex */
-    flex-direction: row;
-    justify-content: space-around;
+    html {
+        background-color: #121212;
+        color: white;
     }
 
-    .container {
+    .hand-container {
+        display: flex; /* or inline-flex */
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .shadow {
+        box-shadow: 0 8px 6px -6px black;
+    }
+
+    .mouseListStyle:hover{
+        background-color: #B00020 !important; 
+    }
+
+.container {
         padding-right: 15px;
         padding-left: 15px;
         margin-right: auto;
@@ -20,13 +28,13 @@ html {
           width: 750px;
         }
       }
-      @media (min-width: 992px) {
-        .container {
-          width: 970px;
-        }
-      }
-      @media (min-width: 1200px) {
-        .container {
-          width: 1170px;
-        }
-      }
+@media (min-width: 992px) {
+    .container {
+    width: 970px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
