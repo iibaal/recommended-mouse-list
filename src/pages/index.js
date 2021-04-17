@@ -22,7 +22,8 @@ const handBox = {
   display: 'flex',
   width: '300px',
   textAlign: 'center',
-  justifyContent: 'center'
+  justifyContent: 'center',
+  borderRadius: '5px'
 }
 
 const handGrip = [
@@ -79,19 +80,19 @@ const IndexPage = () => {
       </h1>
       <div className="hand-container" style={{ flexWrap: 'wrap', justifyContent: 'space-around', textAlign: 'center' }}>
         {!gripTangan && handGrip.map(grip => (
-          <div style={handBox}>
+          <div style={handBox} className="grip-tangan">
             <div onClick={() => setGripTangan(grip.grip)} state={{ gripTangan: grip.grip }}>
               <img style={{ marginTop: '24px', width: '300px' }} alt={grip.grip} src={`${grip.imagePath}`} />
             </div>
-            <span style={{ marginTop: '16px', fontSize: '24px' }}>{grip.grip}</span>
+            <span style={{ marginTop: '16px', marginBottom: '16px', fontSize: '24px' }}>{grip.grip}</span>
           </div>
         ))}
         {gripTangan && handSize.map(size => (
-          <div style={handBox}>
+          <div style={handBox} className="grip-tangan">
             <Link to='/mouseList' state={{ gripTangan: gripTangan, gripTangan, ukuranTangan: size.size }}>
               <img style={{ marginTop: '24px', width: '300px' }} alt={size.text} src={`${size.imagePath}`} />
             </Link>
-            <span style={{ marginTop: '16px', fontSize: '24px' }}>{size.text}</span>
+            <span style={{ marginTop: '16px', marginBottom: '16px', fontSize: '24px' }}>{size.text}</span>
           </div>
         ))}
       </div>

@@ -16,6 +16,10 @@
     .mouseListStyle:hover{
         background-color: #2d2d2d !important; 
     }
+    .grip-tangan:hover{
+        background-color: #2d2d2d;
+        cursor: pointer;
+    }
 .container {
         padding-right: 15px;
         padding-left: 15px;
