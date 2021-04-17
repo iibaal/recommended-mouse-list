@@ -1,7 +1,7 @@
-import * as React from "react"
+import React, { useState } from "react"
 import "../styles/global.css"
 import { Link } from "gatsby"
-import {Helmet} from "react-helmet";
+import { Helmet } from "react-helmet";
 
 
 // styles
@@ -40,8 +40,30 @@ const handGrip = [
   },
 ]
 
+const handSize = [
+  {
+    text: '<18CM',
+    size: 'Kecil',
+    imagePath: 'smallhand.webp'
+  },
+  {
+    text: '18CM',
+    size: 'Sedang',
+    imagePath: 'mediumhand.webp'
+  },
+  {
+    text: '>18CM',
+    size: 'Besar',
+    imagePath: 'bighand.webp'
+  },
+]
+
 // markup
 const IndexPage = () => {
+  // Declare a new state variable, which we'll call "count"
+  const [gripTangan, setGripTangan] = useState();
+  const [ukuranTangan, setUkuranTangan] = useState();
+
   return (
     <main style={pageStyles} className="container">
       <Helmet>
@@ -50,20 +72,38 @@ const IndexPage = () => {
         <meta name="description" content="Daftar mouse yang direkomendasikan oleh komunitas" />
         <link rel="canonical" href="https://pppcmouselist.gatsbyjs.io/" />
       </Helmet>
-      
+
       <h1 style={headingStyles}>
-        Grip Tangan
+        {!gripTangan && 'Grip Tangan'}
+        {gripTangan && 'Ukuran Tangan'}
       </h1>
       <div className="hand-container" style={{ flexWrap: 'wrap', justifyContent: 'space-around', textAlign: 'center' }}>
-        {handGrip.map(grip => (
+        {!gripTangan && handGrip.map(grip => (
           <div style={handBox}>
-            <Link to='/ukuranTangan' state={{ gripTangan: grip.grip }}>
+            <div onClick={() => setGripTangan(grip.grip)} state={{ gripTangan: grip.grip }}>
               <img style={{ marginTop: '24px', width: '300px' }} alt={grip.grip} src={`${grip.imagePath}`} />
-            </Link>
+            </div>
             <span style={{ marginTop: '16px', fontSize: '24px' }}>{grip.grip}</span>
           </div>
         ))}
+        {gripTangan && handSize.map(size => (
+          <div style={handBox}>
+            <Link to='/mouseList' state={{ gripTangan: gripTangan, gripTangan, ukuranTangan: size.size }}>
+              <img style={{ marginTop: '24px', width: '300px' }} alt={size.text} src={`${size.imagePath}`} />
+            </Link>
+            <span style={{ marginTop: '16px', fontSize: '24px' }}>{size.text}</span>
+          </div>
+        ))}
       </div>
+      <br /><br /><br />
+
+      <div style={{ display: 'flex', justifyContent: 'center', textAlign: 'center' }}>
+        <h3>
+          Join Discord kami!<br /><iframe style={{ marginTop: '32px' }} src={"https://discord.com/widget?id=668089659494105121&theme=dark$username=dogepism"} width="350" height="350" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+        </h3>
+      </div>
+
+
     </main>
   )
 }
