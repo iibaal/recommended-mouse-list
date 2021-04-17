@@ -25,6 +25,13 @@ const resetStyles = {
   color: 'white '
 }
 
+const mouseListStyle = {
+  cursor: 'pointer',
+  color: 'white',
+  width: '300px',
+  margin: '24px'
+}
+
 // const Box = {
 //   flexDirection: 'column',
 //   display: 'flex',
@@ -60,7 +67,7 @@ const MouseList = ({ location }) => {
           mouseList.filter(mouse => mouse.size === location.state.ukuranTangan)
             .filter(mouse => mouse.grip === location.state.gripTangan)
             .map(mouse =>
-              <div key={mouse.key} style={{ width: '300px', margin: '24px' }}>{mouse.mouseName}</div>)
+              <div key={mouse.key} style={mouseListStyle}><a style={{color: 'white'}} href={`https://www.tokopedia.com/search?st=product&q=${mouse.mouseName}&navsource=home`}>{mouse.mouseName}</a></div>)
         }
       </div>
       <div style={{ textAlign: 'center', marginTop: '64px' }}>
