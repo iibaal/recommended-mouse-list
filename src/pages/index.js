@@ -99,7 +99,7 @@ const IndexPage = () => {
 
       <div style={{ display: 'flex', justifyContent: 'center', textAlign: 'center' }}>
         <h3>
-          Join Discord kami!<br /><iframe style={{ marginTop: '32px' }} src={"https://discord.com/widget?id=668089659494105121&theme=dark$username=dogepism"} width="350" height="350" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+          Join Discord kami dengan menekan tombol Connect dibawah!<br /><iframe style={{ marginTop: '32px' }} src={"https://discord.com/widget?id=668089659494105121&theme=dark$username=dogepism"} width="350" height="350" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
         </h3>
       </div>
 
