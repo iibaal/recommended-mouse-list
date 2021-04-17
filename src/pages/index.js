@@ -1,6 +1,8 @@
 import * as React from "react"
 import "../styles/global.css"
 import { Link } from "gatsby"
+import { Helmet } from "react-helmet"
+
 
 
 // styles
@@ -43,7 +45,11 @@ const handGrip = [
 const IndexPage = () => {
   return (
     <main style={pageStyles} className="container">
-      <title>Home Page</title>
+      <Helmet>
+          <meta charSet="utf-8" />
+          <title>Recommended Mouse List</title>
+          <link rel="canonical" href="https://pppcmouselist.gatsbyjs.io/" />
+      </Helmet>
       <h1 style={headingStyles}>
         Grip Tangan
       </h1>
